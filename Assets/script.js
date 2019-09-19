@@ -48,7 +48,7 @@ $(document).on('click', '.gifButton', function(){
     var state = $(this).attr('data-state');
     if(state == 'still'){
     
-        $(this).attr('src',$(this).data("data-animated"));
+        $(this).attr('src',$(this).data(animated));
         $(this).attr('data-state','animated');
         
     } else {
@@ -58,6 +58,7 @@ $(document).on('click', '.gifButton', function(){
 })
 
 $('#searchGif').on('click',function(){
+    console.log("Adding Gif Button");
     var newSearch = $('#gifSearch').val().trim();
     storyArray.push(newSearch);
     makeButton(storyArray,'gifButton','#buttonsArea');
